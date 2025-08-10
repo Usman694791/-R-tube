@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Watch Video</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Mini YouTube</h1>
+    <a href="index.html">Back to Home</a>
+</header>
+<main id="video-container"></main>
+<script>
+const params = new URLSearchParams(window.location.search);
+const videoId = params.get('id');
+const title = params.get('title');
+document.getElementById('video-container').innerHTML = `
+    <h2>${title}</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" 
+        frameborder="0" allowfullscreen></iframe>
+`;
+</script>
+</body>
+</html>
